@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/solar/bootstrap.min.css" rel="stylesheet" 
+integrity="sha384-8nq3OiMMgrVFAHyRMMO+DTfMEciSY+c3Awhj/5ljQ1xck1Uv2BUtMjsjLD8GT5Er" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars Attacks</title>
+  
+</head>
+
+<body>
+  <div class = "container">
+    <div class="jumbotron">
+    <h1 class="display-3">I'd Rather Be On Mars</h1>
+    <p class="lead">Ever feel like escaping far, far away after a long homework assignment. If so, then this page is for you!</p>
+    <hr class="my-4">
+    <p>Click here to get the latest from our Mars Team!</p>
+    <p class="lead">
+    <a class="btn btn-warning btn-lg" href="/scrape" role="button">Earth to Base</a>
+    </p>
+    </div>
+  </div>
+  <div class = "container">
+    <div class = "row">
+        <div class= "col-4">
+        <h2>Latest Mars News</h2>
+        </div>
+    </div>
+    <div class = "row">
+        <div class = "col-8">
+        <h3>{{mars.latest_headline}}</h3>
+        </div>
+    </div>
+    <div class = "row">
+        <div class = "col-12">
+        <p>{{mars.latest_news}}</p>
+        </div>
+    </div>   
+    <div class = "row">
+        <div class= "col-6">
+            <div class = "row">
+                <div class = "col-12">
+                <h2>Featured Mars Image</h2>
+                </div>
+            </div>
+            <div class = "row">
+                <div class = "col-12">
+                <img src={{mars.featured_image}} alt="feature image" style="width:100%;height:100%;display:block;">
+                </div>
+            </div>
+        </div>
+        <div class = "col-6">
+            <div class = "row">
+                <div class="card text-white bg-success mb-3" style="max-width: 20rem;">
+                <div class="card-header">It's Cold Out There</div>
+                <div class="card-body">
+                <h4 class="card-title">Current Mars Weather</h4>
+                <p class="card-text">{{mars.weather}}</p>
+                </div>
+                </div>
+            </div>
+            <div class = "row">
+            <h3>Mars Facts</h3>
+            <hr "my-4">
+            </div>
+            <div class = "row">
+            {{mars.facts_table|safe}}
+            </div>
+        </div>
+    </div> 
+    <div class="row">
+        <div class="col-12">
+        <h1 align="center">Mars Hemispheres</h1>
+        <hr "my-4">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+        <img src={{mars["hemispheres"][0]["img_url"]}} alt={{mars["hemispheres"][0]["title"]}} style="width:100%;height:100%;display:block;">
+        </div>
+        <div class="col-6">
+        <img src={{mars["hemispheres"][1]["img_url"]}} alt={{mars["hemispheres"][1]["title"]}}  style="width:100%;height:100%;display:block;">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+        <img src={{mars["hemispheres"][2]["img_url"]}} alt={{mars["hemispheres"][2]["title"]}} style="width:100%;height:100%;display:block;">
+        </div>
+        <div class="col-6">
+        <img src={{mars["hemispheres"][3]["img_url"]}} alt={{mars["hemispheres"][3]["title"]}} style="width:100%;height:100%;display:block;">
+        </div>
+    </div>
+   </div>
+    
+
+
+
+
+  
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
+integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" 
+integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
+integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>
